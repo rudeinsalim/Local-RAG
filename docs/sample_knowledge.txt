@@ -1,0 +1,15 @@
+Project Guardian Internal Security Policy v2.4
+Last Updated: October 2026
+
+1. Overview
+Project Guardian is an automated enterprise defense mechanism designed to monitor, triage, and mitigate system vulnerabilities in hybrid cloud deployments.
+
+2. Incident Response Triage Protocols
+- Low Risk Events: Minor system updates, successful key-based SSH logins, and standard backup tasks. No automated action required; logged for auditing purposes.
+- Medium Risk Events: Disk usage exceeding 85%, repeated incorrect password entries under 5 attempts, or unrecognized user-agent strings. Automated alert dispatched to the local security channel.
+- High Risk Events: SQL injection attempts, path traversal attempts, or explicit Cross-Site Scripting (XSS) payload signatures. The Web Application Firewall (WAF) must immediately drop the packet and flag the source IP.
+- Critical Risk Events: Ransomware behavior patterns, LSASS memory dumps via tools like mimikatz, or unauthorized active directory domain admin account creations. Triggers an immediate node isolation protocol and pages the on-call security engineer.
+
+3. Escalation Contacts
+Primary On-Call Security Lead: sec-lead-internal@enterprise.local
+Secondary Escalation: infrastructure-ops-group@enterprise.local
